@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function submitRadioButton()
+    {
+    var gen=document.forms["myForm"] ["gender"];
+    if(gen[0].checked==false&&gen[1].checked==false)  
+    {
+     alert("please enter gender");
+     return false;
+    } 
+    var emailID = document.myForm.Email.value;
+     atpos = emailID.indexOf("@");
+     dotpos = emailID.lastIndexOf(".");
+
+    if (atpos < 1 || (dotpos - atpos < 2))
+    {
+      alert("please enter correct email ID")
+     return false;
+    }
+    if(document.myForm.postalcode.value ==""||
+			isNaN(document.myForm.postalcode.value)||
+			document.myForm.postalcode.value.length !=5)
+		{
+			alert("please provide a Zip in the format #####.!");
+			return false;
+    }
+    return true;
+    }
+  </script>
+  
+  <style>
+     .tooltip {
+            position: relative;
+            display: inline-block;
+          
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: whitesmoke;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+        
+          
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse; 
+        width: 100%;
+    }
+    
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
+
+<title>U.C Happiness Survey</title>
+</head>
+<body style="background-color: rgb(146, 206, 136);">
+
+  <h1 style="background-color: greenyellow;  border-radius: 20px; padding: 30px; width: 80%; height: 100px; text-align:center;"><b style="color: rgb(14, 13, 13);  
+  font-size:5vw;">
+Welcome To Happiness Survey! 
+  </b> <br> How Happy Are You? </h1>
+
+
+<p>Take The Oxford Happiness Questionaire and your score will be emailed to you. The most unhappy score you can get is a "1" and the happiest is a "5" The average person scores slightly over 3.
+
+</p>
+
+<p><b>Instructions:(1)</b><br>
+    Below are a number of statements about happiness. Rate how much you agree or disagree with each by clicking on the appropriate circle. You will need to read the statements carefully because some are phrased positively and others negatively.
+    Don't take too long over individual questions; there are no 'right' or 'wrong' questions and no trick questions. The first answer that comes into your head is probably the right one for you.
+    If you find some of the questions difficult, please give the answer that is true for you in general or for most of the time.
+
+</p>
+<p>When you are done rating all the statements, hit the "submit" button below and your score will be emailed to you.</p>
+<form  name="myForm" action="success.html" method="get" onsubmit="return submitRadioButton()">
+    <b>Your Name:</b><br>
+    <input type="text" name="mname" required placeholder="Enter Your Name">
+    <br><br>
+    <b>Your Email:</b><br>
+    <input type="text" name="Email" required placeholder="Enter Your Email">
+    <br>
+    <br>
+    <b>Postal Code:</b><br>
+    <input type="text" name="postalcode" required placeholder="Enter Your Postal Code">(or country if outside US).<br>
+    <br>
+    <b>Gender:</b><input  type="radio" id="male" name="gender" value="male"> Male <input type="radio" id="female" name="gender" value="Female">Female <input type="radio" id="diversed" name="gender" value="Diversed">Diversed<br>
+    <br>
+    <b>Age group:</b> <select required>
+      <option value="">Select Age Group</option>
+        <option value="1">  < 18   </option>
+        <option value="2"> 18-28 </option>
+        <option value="3"> 28-40 </option>
+        <option value="4"> 41-65 </option>
+        <option value="5"> > 65 </option>
+      </select> <br>
+      <br>
+    <b>Region:</b> <select required>
+      <option value="">Select Region</option>
+        <option value="africa">Africa</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="middle east">Middle East</option>
+        <option value="north america">North America</option>
+        <option value="oceania">Oceania</option>
+        <option value="south america">South America</option>
+      </select> <br>
+  
+  <p><b>Note: Your entry is private, and you will not be added to any of our lists by participating in this survey. We never, under any circumsstances, share or sell any personal information entered here, and treat it as carefully and sensitively as our own.
+</b>
+</p>
+<br>
+<p style="border-top:1px solid #dddddd; margin-bottom: -10px;"></p>
+<br>
+<p>Evaluate the following</p>
+<table>
+    <tr>
+      <th></th>
+      <th style="text-align:center">Strongly<br>Disagree</th>
+      <th style="text-align:center">Disagree</th>
+      <th style="text-align:center">Neutral</th>
+      <th style="text-align:center">Agree</th>
+      <th>Strongly<br>Agree</th> 
+    </tr>
+    <tr>
+      <td><b>I feel that life is very rewarding</b></td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="oosd" name="ooo" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="ood" name="ooo" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="oon" name="ooo" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="ooa" name="ooo" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="oosa" name="ooo" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+    </tr>
+    <tr>
+      <td><b>I have very warm feelings towards almost everyone </b></td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="osd" name="stro" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="odi" name="stro" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="one" name="stro" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="oag" name="stro" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+      <td style="text-align:center;"><div class="tooltip"><input type="radio" id="osa" name="stro" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+    </tr>
+    <tr>
+        <td><b>I laugh a lot.</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="laua" name="three" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="laub" name="three" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="lauc" name="three" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="laud" name="three" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="laue" name="three" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I find most things amusing </b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fina" name="four" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="finb" name="four" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="finc" name="four" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="findd" name="four" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fine" name="four" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I am very happy</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="iama" name="five" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="iamb" name="five" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="iamc" name="five" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="iamd" name="five" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="iame" name="five" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I can fit in everything I want to</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="icana" name="six" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="icanb" name="six" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="icanc" name="six" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="icand" name="six" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="icane" name="six" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I feel able to take anything on</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="ifea" name="seven" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="ifeb" name="seven" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="ifec" name="seven" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="ifed" name="seven" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="ifee" name="seven" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I feel fully mentally alert</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="feea" name="eight" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="feeb" name="eight" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="feec" name="eight" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="feed" name="eight" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="feee" name="eight" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I feel I have a great deal of energy</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="nia" name="nine" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="nib" name="nine" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="nic" name="nine" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="nid" name="nine" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="nie" name="nine" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I usually have a good influence on events</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="tena" name="ten" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="tenb" name="ten" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="tenc" name="ten" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="tend" name="ten" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="tene" name="ten" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I am intensely interested in other people</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="elea" name="eleven" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="eleb" name="eleven" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="elec" name="eleven" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="eled" name="eleven" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="elee" name="eleven" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>Life is good</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="twea" name="twelve" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="tweb" name="twelve" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="twec" name="twelve" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="twed" name="twelve" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="twee" name="twelve" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I don't think I look attractive</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="thira" name="thirteen" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="thirb" name="thirteen" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="thirc" name="thirteen" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="third" name="thirteen" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="thire" name="thirteen" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I rarely wake up feeling rested</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="foua" name="fourteen" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="foub" name="fourteen" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fouc" name="fourteen" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="foud" name="fourteen" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="foue" name="fourteen" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I can fit in everthing I want to</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fifa" name="fifteen" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fifb" name="fifteen" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fifc" name="fifteen" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fifd" name="fifteen" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="fife" name="fifteen" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I am not particularly optimistic about the future</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sixa" name="sixteen" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sixb" name="sixteen" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sixc" name="sixteen" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sixd" name="sixteen" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sixe" name="sixteen" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I prefer home office to onsite working.</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="seva" name="seventeen" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sevb" name="seventeen" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sevc" name="seventeen" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="sevd" name="seventeen" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="seve" name="seventeen" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I am satisfied with my job.</b></td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="eiga" name="eighteen" value="Strongly Disagree" required><span class="tooltiptext">Strongly Disagree</span></div><br> 1 </td> 
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="eigb" name="eighteen" value="Disagree"><span class="tooltiptext">Disagree</span></div><br> 2 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="eigc" name="eighteen" value="Neutral"><span class="tooltiptext">Neutral</span></div><br> 3 </td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="eigd" name="eighteen" value="Agree"><span class="tooltiptext">Agree</span></div><br> 4</td>
+        <td style="text-align:center;"><div class="tooltip"><input type="radio" id="eigd" name="eighteen" value="Strongly Agree"><span class="tooltiptext">Strongly Agree</span></div><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I get appreciation for my work.</b></td>
+        <td style="text-align:center;">Never<br><input type="radio" id="nna" name="nineteen" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;">Rarely<br><input type="radio" id="nnb" name="nineteen" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;">Sometimes<br><input type="radio" id="nnc" name="nineteen" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;">Always<br><input type="radio" id="nnd" name="nineteen" value="Agree"><br> 4</td>
+        <td style="text-align:center;">Often<br><input type="radio" id="nne" name="nineteen" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How many hours do you work per week?</b></td>
+        <td style="text-align:center;"> < 10 hours <br><input type="radio" id="tta" name="twenty" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> 10 - 20 hours <br><input type="radio" id="ttb" name="twenty" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> 20 - 30 hours<br><input type="radio" id="ttc" name="twenty" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> 30 - 40 hours<br><input type="radio" id="ttd" name="twenty" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> > 40 hours <br><input type="radio" id="tte" name="twenty" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How often do you have the opportunity to learn and develop new skills at work?</b></td>
+        <td style="text-align:center;">Never<br><input type="radio" id="ttaa" name="twentyone" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;">Rarely<br><input type="radio" id="ttab" name="twentyone" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;">Sometimes<br><input type="radio" id="ttac" name="twentyone" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;">Always<br><input type="radio" id="ttad" name="twentyone" value="Agree"><br> 4</td>
+        <td style="text-align:center;">Often<br><input type="radio" id="ttae" name="twentyone" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>My workday is challenging</b></td>
+        <td style="text-align:center;">Never<br><input type="radio" id="ttba" name="twentytwo" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;">Rarely<br><input type="radio" id="ttbb" name="twentytwo" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;">Sometimes<br><input type="radio" id="ttbc" name="twentytwo" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;">Always<br><input type="radio" id="ttbd" name="twentytwo" value="Agree"><br> 4</td>
+        <td style="text-align:center;">Often<br><input type="radio" id="ttbe" name="twentytwo" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How often do you work extra hours?</b></td>
+        <td style="text-align:center;">Never<br><input type="radio" id="ttca" name="twentythree" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;">Rarely<br><input type="radio" id="ttcb" name="twentythree" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;">Sometimes<br><input type="radio" id="ttcc" name="twentythree" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;">Always<br><input type="radio" id="ttcd" name="twentythree" value="Agree"><br> 4</td>
+        <td style="text-align:center;">Often<br><input type="radio" id="ttce" name="twentythree" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How many hours per week do you spend with friends?</b></td>
+        <td style="text-align:center;"> < 2 hours <br><input type="radio" id="ttda" name="twentyfour" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> 2 - 3 hours <br><input type="radio" id="ttdb" name="twentyfour" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> 3 - 4 hours<br><input type="radio" id="ttdc" name="twentyfour" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> 4 - 5 hours<br><input type="radio" id="ttdd" name="twentyfour" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> > 5 hours <br><input type="radio" id="ttde" name="twentyfour" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How many hours per day do you spend with social media?</b></td>
+        <td style="text-align:center;"> < 2 hours <br><input type="radio" id="ttea" name="twentyfive" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> 2 - 3 hours <br><input type="radio" id="tteb" name="twentyfive" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> 3 - 4 hours<br><input type="radio" id="ttec" name="twentyfive" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> 4 - 5 hours<br><input type="radio" id="tted" name="twentyfive" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> > 5 hours <br><input type="radio" id="ttee" name="twentyfive" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How many hours per week do spend time with your favourite hobby?</b></td>
+        <td style="text-align:center;"> < 2 hours <br><input type="radio" id="ttfa" name="twentysix" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> 2 - 3 hours <br><input type="radio" id="ttfb" name="twentysix" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> 3 - 4 hours<br><input type="radio" id="ttfc" name="twentysix" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> 4 - 5 hours<br><input type="radio" id="ttfd" name="twentysix" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> > 5 hours <br><input type="radio" id="ttfe" name="twentysix" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How many hours do you sleep per night?</b></td>
+        <td style="text-align:center;"> < 4 - 5 hours <br><input type="radio" id="ttga" name="twentyseven" value="Strongly Disagree"required><br> 1 </td> 
+        <td style="text-align:center;"> 5 - 6 hours <br><input type="radio" id="ttgb" name="twentyseven" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> 6 - 7 hours<br><input type="radio" id="ttgc" name="twentyseven" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> 7 - 8 hours<br><input type="radio" id="ttgd" name="twentyseven" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> > 8 hours <br><input type="radio" id="ttge" name="twentyseven" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>On how many days per year do you feel sick ?</b></td>
+        <td style="text-align:center;"> < 5 days <br><input type="radio" id="ttia" name="twentyeight" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> 5 - 10 days <br><input type="radio" id="ttib" name="twentyeight" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> 10 - 20 days<br><input type="radio" id="ttic" name="twentyeight" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> 20 - 30 days<br><input type="radio" id="ttid" name="twentyeight" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> > 30 days <br><input type="radio" id="ttie" name="twentyeight" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I maintain a healthy diet.</b></td>
+        <td style="text-align:center;"> Strongly<br>Disagree <br><input type="radio" id="ttja" name="twentynine" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> Disagree <br><input type="radio" id="ttjb" name="twentynine" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> Neutral <br><input type="radio" id="ttjc" name="twentynine" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> Agree <br><input type="radio" id="ttjd" name="twentynine" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> Strongly<br>Agree <br><input type="radio" id="ttje" name="twentynine" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>Do you feel stressed?</b></td>
+        <td style="text-align:center;">Never<br><input type="radio" id="tha" name="thirty" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;">Rarely<br><input type="radio" id="thb" name="thirty" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;">Sometimes<br><input type="radio" id="thc" name="thirty" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;">Always<br><input type="radio" id="thd" name="thirty" value="Agree"><br> 4</td>
+        <td style="text-align:center;">Often<br><input type="radio" id="the" name="thirty" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>Do you feel exhausted?</b></td>
+        <td style="text-align:center;">Never<br><input type="radio" id="thaa" name="thirtyone" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;">Rarely<br><input type="radio" id="thab" name="thirtyone" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;">Sometimes<br><input type="radio" id="thac" name="thirtyone" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;">Always<br><input type="radio" id="thad" name="thirtyone" value="Agree"><br> 4</td>
+        <td style="text-align:center;">Often<br><input type="radio" id="thae" name="thirtyone" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>Do you feel healthy?</b></td>
+        <td style="text-align:center;"> Strongly<br>Disagree <br><input type="radio" id="thba" name="thirtytwo" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> Disagree <br><input type="radio" id="thbb" name="thirtytwo" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> Neutral <br><input type="radio" id="thbc" name="thirtytwo" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> Agree <br><input type="radio" id="thbd" name="thirtytwo" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> Strongly<br>Agree <br><input type="radio" id="thbe" name="thirtytwo" value="Strongly Agree"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>Do you have children?</b></td>
+        <td style="text-align:center;"> Yes<br><input type="radio" id="thca" name="thirtythree" value="Yes" required><br> 1 </td> 
+        <td style="text-align:center;"> NO <br><input type="radio" id="thcb" name="thirtythree" value="No"><br> 2 </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><b>What is your relationship status?</b></td>
+        <td style="text-align:center;"> Single <br><input type="radio" id="thda" name="thirtyfour" value="Single" required><br> 1 </td> 
+        <td style="text-align:center;"> In a relationship <br><input type="radio" id="thdb" name="thirtyfour" value="In a relationship"><br> 2 </td>
+        <td style="text-align:center;"> Married <br><input type="radio" id="thdc" name="thirtyfour" value="Married"><br> 3 </td>
+        <td style="text-align:center;"> Divorced <br><input type="radio" id="thdd" name="thirtyfour" value="Divorced"><br> 4</td>
+        <td style="text-align:center;"> Widowed <br><input type="radio" id="thde" name="thirtyfour" value="Widowed"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>How often do you worry about your financial situation?</b></td>
+        <td style="text-align:center;">Never<br><input type="radio" id="thea" name="thirtyfive" value="Never" required><br> 1 </td> 
+        <td style="text-align:center;">Rarely<br><input type="radio" id="theb" name="thirtyfive" value="Rarely"><br> 2 </td>
+        <td style="text-align:center;">Sometimes<br><input type="radio" id="thec" name="thirtyfive" value="Sometimes"><br> 3 </td>
+        <td style="text-align:center;">Always<br><input type="radio" id="thed" name="thirtyfive" value="Always"><br> 4</td>
+        <td style="text-align:center;">Often<br><input type="radio" id="thee" name="thirtyfive" value="Often"><br> 5 </td>
+      </tr>
+      <tr>
+        <td><b>I am satisfied with my financial situation.</b></td>
+        <td style="text-align:center;"> Strongly<br>Disagree <br><input type="radio" id="thfa" name="thirtysix" value="Strongly Disagree" required><br> 1 </td> 
+        <td style="text-align:center;"> Disagree <br><input type="radio" id="thfb" name="thirtysix" value="Disagree"><br> 2 </td>
+        <td style="text-align:center;"> Neutral <br><input type="radio" id="thfc" name="thirtysix" value="Neutral"><br> 3 </td>
+        <td style="text-align:center;"> Agree <br><input type="radio" id="thfd" name="thirtysix" value="Agree"><br> 4</td>
+        <td style="text-align:center;"> Strongly<br>Agree <br><input type="radio" id="thfe" name="thirtysix" value="Strongly Agree"><br> 5 </td>
+      </tr>
+    
+
+  </table>
+  <input type="submit" value="Submit" >
+</form>
+  <br>
+  <p>(1) The Oxford Happiness Survey is from Personality and Individual Differences, Vol.33, =7, pp. 1080-1081 and developed by: Peter Hills and Micahel Argyle from The Oxford Happiness Project, School of Psychology, Oxford Brookes University, Headinton Campus, Gipsy Lane, Oxford OX3 0BP, UK.</p>
+
+</body>
